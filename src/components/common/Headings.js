@@ -28,4 +28,3 @@ export const Label = ({text}) => {
 export const EnquiryDetailHeading = ({text}) => {
     return <h5 className="my-5">{text}</h5>
 }
-

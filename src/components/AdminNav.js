@@ -1,17 +1,14 @@
-import React from 'react'
-import logo from "../assets/logo/holidaze_logo_green.png"
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { LinkContainer } from 'react-router-bootstrap';
+import React from "react";
+import logo from "../assets/logo/holidaze_logo_green.png";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { LinkContainer } from "react-router-bootstrap";
 
 function AdminNav() {
-
-  const [auth, setAuth] = useAuth();
+  const [, setAuth] = useAuth();
 
   const navigate = useNavigate();
 
@@ -24,14 +21,12 @@ function AdminNav() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand><img className="nav-logo" alt="logo" src={logo}/></Navbar.Brand>
+        <Navbar.Brand>
+          <img className="nav-logo" alt="logo" src={logo} />
+        </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px"}}
-          >
-
+          <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }}>
             <LinkContainer to="/admin/place/add">
               <Nav.Link>Add place</Nav.Link>
             </LinkContainer>
@@ -51,4 +46,4 @@ function AdminNav() {
   );
 }
 
-export default AdminNav
+export default AdminNav;

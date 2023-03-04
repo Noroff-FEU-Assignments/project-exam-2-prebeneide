@@ -1,26 +1,50 @@
-import React from 'react'
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPerson,faDoorOpen, faBed, faToilet, faStar } from '@fortawesome/pro-solid-svg-icons';
+import React from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { FaBed, FaStar } from "react-icons/fa";
 
-function DropDownProductItem({data}) {
-  return <>
-            <Row>
-                <Col className="navbar__search--dropdown-image">
-                    <img alt="Hotel,BnB,Guesthouse" src={data.attributes.coverimage.data.attributes.url} />
-                </Col>
-                <Col className="navbar__search-dropdown-infocolumn">
-                    <p>{data.attributes.name}</p>
-                    <p><FontAwesomeIcon className="icon-margin" icon={faBed} />{data.attributes.howmanypeople}</p>
-                    <p>{data.attributes.price} kr night</p>
-                    <p><FontAwesomeIcon className="icon-margin" icon={faStar} />{data.attributes.ratingdecimal}</p>
-                </Col>
-                <Col className="navbar__search-dropdown-areacolumn">
-                    <p>{data.attributes.area}</p>
-                </Col>
-            </Row>
-  </>
+function DropDownProductItem({ data }) {
+  return (
+    <>
+      <Row>
+        <Col className="navbar__search--dropdown-image">
+          <img
+            alt="Hotel,BnB,Guesthouse"
+            src={data.attributes.coverimage.data.attributes.url}
+          />
+        </Col>
+        <Col className="navbar__search--dropdown-infocolumn">
+          <Row>
+            <Col>
+              <p className="card__text--name">{data.attributes.name}</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <p className="card__text--people">
+                <FaBed className="icon-margin" />
+                {data.attributes.howmanypeople}
+              </p>
+            </Col>
+            <Col>
+              <p className="card__text--rating">
+                {data.attributes.ratingdecimal}
+                <FaStar className="icon-margin" />
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <p className="card__text--price">{data.attributes.price} kr</p>
+            </Col>
+            <Col>
+              <p className="card__text--area">{data.attributes.area}</p>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </>
+  );
 }
 
-export default DropDownProductItem
+export default DropDownProductItem;

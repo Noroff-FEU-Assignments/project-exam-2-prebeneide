@@ -56,7 +56,7 @@
 
 .product__detail--price-column {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     @media screen and (max-width: 600px) {
         justify-content: center;
     }

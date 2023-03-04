@@ -46,6 +46,9 @@
     color: $colour-primary-black;
     height: auto;
     min-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
     z-index: 5000;
     border-right: 1px solid $colour-primary;
     border-left: 1px solid $colour-primary;
@@ -74,6 +77,8 @@
 .navbar__search--dropdown-image {
     width: 110px;
     height: 110px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     display:flex;
     align-self: center;
 }
@@ -87,16 +92,8 @@
 }
 
 .navbar__search--dropdown-infocolumn {
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding:0;
-}
-
-.navbar__search--dropdown-areacolumn {
-    display: flex;
-    justify-content: flex-end;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .bg-dark {
@@ -151,6 +148,9 @@
         margin-left: 20px;
     }
 }
+
+
+
 
 
 
